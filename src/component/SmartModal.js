@@ -3,11 +3,11 @@ import Modal from 'react-modal-resizable-draggable';
 import styled from 'styled-components';
 
 //react-modal-resizable-draggable test
-function DragResizeModal({isOpen, onRequestClose, children}) {
+function SmartModal({isOpen, onCloseEv}) {
 	return (
 		<Modal
 			isOpen={isOpen}
-			onRequestClose={onRequestClose}
+			onRequestClose={onCloseEv}
 			initWidth={400}
 			initHeight={300}
 			minWidth={200}
@@ -24,14 +24,17 @@ function DragResizeModal({isOpen, onRequestClose, children}) {
 			}}
 		>
 			<ModalContent>
-				<CloseButton onClick={onRequestClose} />
-				<div>{children}</div>
+				<CloseButton onClick={onCloseEv} />
+				<div>
+					<h2>Resizable and Draggable Modal</h2>
+					<p>This is a resizable and draggable modal.</p>
+				</div>
 			</ModalContent>
 		</Modal>
 	);
 }
 
-export default DragResizeModal;
+export default SmartModal;
 
 const CloseButton = styled.button`
 	position: absolute;

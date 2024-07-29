@@ -26,7 +26,7 @@ const customStyles = {
 Modal.setAppElement('#root');
 
 //react-rnd test
-function RndModal({isOpen, onClose, children}) {
+function InteractiveModal({isOpen, onCloseEv}) {
 	const [dimensions, setDimensions] = useState({
 		width: 500,
 		height: 300,
@@ -50,7 +50,7 @@ function RndModal({isOpen, onClose, children}) {
 	return (
 		<Modal
 			isOpen={isOpen}
-			onRequestClose={onClose}
+			onRequestClose={onCloseEv}
 			style={customStyles}
 			contentLabel='Resizable Draggable Modal'
 		>
@@ -73,16 +73,21 @@ function RndModal({isOpen, onClose, children}) {
 				<ModalContent>
 					<ModalHeader className='drag-handle'>
 						<h3 style={{margin: 0}}>Resizable Draggable Modal</h3>
-						<CloseButton onClick={onClose}>Close</CloseButton>
+						<CloseButton onClick={onCloseEv}>Close</CloseButton>
 					</ModalHeader>
-					<ModalBody>{children}</ModalBody>
+					<ModalBody>
+						<p>
+							Your content goes here. Add more content to make it
+							scrollable...
+						</p>
+					</ModalBody>
 				</ModalContent>
 			</Rnd>
 		</Modal>
 	);
 }
 
-export default RndModal;
+export default InteractiveModal;
 
 // Styled Components
 const ModalContent = styled.div`

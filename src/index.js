@@ -5,12 +5,12 @@ import GlobalStyle from './GlobalStyle';
 import {RecoilRoot} from 'recoil';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import DateRangePickerPage from './page/DateRangePickerPage';
-import ResizeModalPage from './page/ResizeModalPage';
+import ResizeDragModalPage from './page/ResizeDragModalPage';
 
 const router = createBrowserRouter([
 	{path: '/', element: <App />},
 	{path: '/date', element: <DateRangePickerPage />},
-	{path: '/resize-modal', element: <ResizeModalPage />},
+	{path: '/resize-modal', element: <ResizeDragModalPage />},
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
